@@ -19,6 +19,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors({ origin: true, credentials: true }));
+
+// Global error capture for remote debugging
+global.lastErrors = [];
+function logError(err, context = '') {
+  const errorEntry = {
+    message: err.message,
+    stack: err.stack ? err.stack.substring(0, 200) : 'No stack',
+    context: context,
+    timestamp: new Date()
+  };
+  global.lastErrors.unshift(errorEntry);
+  if (global.lastErrors.length > 5) global.lastErrors.pop();
+  console.error(`[${context}]`, err);
+}
+global.logError = logError;
+
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(`[ROUTE LOG] ${req.method} ${req.originalUrl}`);
@@ -57,6 +73,7 @@ app.get('/api/health', async (req, res) => {
       database: 'connected',
       dbName: dbTest.rows[0].current_database,
       totalUsers: parseInt(userCount.rows[0].count),
+      recentErrors: global.lastErrors,
       timestamp: new Date(), 
       uptime: process.uptime() 
     });

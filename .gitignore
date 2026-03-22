@@ -1,0 +1,42 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+**/build/
+**/flutter_export_environment.sh
+
+# Web related
+**/lib/generated_plugin_registrant.dart
+
+# Symbolication related
+**/app.*.symbols
+**/crashlytics-build.properties
+
+# Exceptions to above rules.
+!**/default.pbxuser
+!**/default.mode1v3
+!**/default.pbxuser
+!**/default.perspectivev3
+!**/xcshareddata/
+!**/build/ios/iphoneos/Runner.app/

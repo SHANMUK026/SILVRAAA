@@ -1,0 +1,49 @@
+﻿Analyzing SILVRA...                                             
+
+  error - Classes can only extend other classes - lib\screens\dashboard\main_wrapper.dart:4:27 - extends_non_class
+  error - No associated named super constructor parameter - lib\screens\dashboard\main_wrapper.dart:5:28 - super_formal_parameter_without_associated_named
+  error - 'child' isn't a field in the enclosing class - lib\screens\dashboard\main_wrapper.dart:5:33 - initializing_formal_for_non_existent_field
+  error - Undefined class 'State' - lib\screens\dashboard\main_wrapper.dart:8:3 - undefined_class
+warning - The method doesn't override an inherited method - lib\screens\dashboard\main_wrapper.dart:8:22 - override_on_non_overriding_member
+  error - Classes can only extend other classes - lib\screens\dashboard\main_wrapper.dart:11:33 - extends_non_class
+  error - Undefined class 'BuildContext' - lib\screens\dashboard\main_wrapper.dart:14:33 - undefined_class
+  error - The method 'setState' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:29:5 - undefined_method
+  error - Undefined class 'Widget' - lib\screens\dashboard\main_wrapper.dart:35:3 - undefined_class
+warning - The method doesn't override an inherited method - lib\screens\dashboard\main_wrapper.dart:35:10 - override_on_non_overriding_member
+  error - Undefined class 'BuildContext' - lib\screens\dashboard\main_wrapper.dart:35:16 - undefined_class
+  error - The method 'Scaffold' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:36:12 - undefined_method
+  error - Undefined name 'widget' - lib\screens\dashboard\main_wrapper.dart:37:13 - undefined_identifier
+  error - The method 'Container' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:38:28 - undefined_method
+  error - The name 'BoxDecoration' isn't a class - lib\screens\dashboard\main_wrapper.dart:39:27 - creation_with_non_type
+  error - The method 'Border' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:40:19 - undefined_method
+  error - The method 'BorderSide' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:40:31 - undefined_method
+  error - The method 'BottomNavigationBar' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:42:16 - undefined_method
+  error - Undefined name 'BottomNavigationBarType' - lib\screens\dashboard\main_wrapper.dart:48:17 - undefined_identifier
+  error - The method 'BottomNavigationBarItem' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:50:13 - undefined_method
+  error - The values in a const list literal must be constants - lib\screens\dashboard\main_wrapper.dart:50:13 - non_constant_list_element
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:51:21 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:51:26 - undefined_identifier
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:52:27 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:52:32 - undefined_identifier
+  error - The method 'BottomNavigationBarItem' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:55:13 - undefined_method
+  error - The values in a const list literal must be constants - lib\screens\dashboard\main_wrapper.dart:55:13 - non_constant_list_element
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:56:21 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:56:26 - undefined_identifier
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:57:27 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:57:32 - undefined_identifier
+  error - The method 'BottomNavigationBarItem' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:60:13 - undefined_method
+  error - The values in a const list literal must be constants - lib\screens\dashboard\main_wrapper.dart:60:13 - non_constant_list_element
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:61:21 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:61:26 - undefined_identifier
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:62:27 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:62:32 - undefined_identifier
+  error - The method 'BottomNavigationBarItem' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:65:13 - undefined_method
+  error - The values in a const list literal must be constants - lib\screens\dashboard\main_wrapper.dart:65:13 - non_constant_list_element
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:66:21 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:66:26 - undefined_identifier
+  error - The method 'Icon' isn't defined for the type '_MainWrapperState' - lib\screens\dashboard\main_wrapper.dart:67:27 - undefined_method
+  error - Undefined name 'Icons' - lib\screens\dashboard\main_wrapper.dart:67:32 - undefined_identifier
+   info - Parameter 'key' could be a super parameter - lib\utils\app_routes.dart:7:9 - use_super_parameters
+   info - Parameter 'key' could be a super parameter - lib\widgets\custom_app_bar.dart:9:9 - use_super_parameters
+   info - Parameter 'key' could be a super parameter - lib\widgets\custom_text_field.dart:13:9 - use_super_parameters
+

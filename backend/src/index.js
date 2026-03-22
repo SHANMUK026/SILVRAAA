@@ -48,8 +48,24 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date(), uptime: process.uptime() });
 });
 
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date(), uptime: process.uptime() });
+app.get('/api/health', async (req, res) => {
+  try {
+    const dbTest = await pool.query('SELECT current_database(), now()');
+    res.json({ 
+      status: 'ok', 
+      database: 'connected',
+      dbName: dbTest.rows[0].current_database,
+      timestamp: new Date(), 
+      uptime: process.uptime() 
+    });
+  } catch (err) {
+    res.status(500).json({ 
+      status: 'error', 
+      database: 'disconnected', 
+      error: err.message,
+      timestamp: new Date() 
+    });
+  }
 });
 
 app.use((err, req, res, next) => {

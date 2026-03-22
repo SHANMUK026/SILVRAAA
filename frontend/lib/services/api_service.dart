@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiService {
   static final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: 'http://localhost:3001/api', // ADB Reverse for physical device testing
+      baseUrl: 'https://silvraaa-production.up.railway.app/api', // Final Production-grade Railway URL
       connectTimeout: const Duration(seconds: 15),
       receiveTimeout: const Duration(seconds: 15),
     ),

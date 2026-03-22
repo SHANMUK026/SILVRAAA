@@ -33,7 +33,7 @@ class _SwipeToSaveState extends State<SwipeToSave> {
           decoration: BoxDecoration(
             color: const Color(0xFFF8F9FA),
             borderRadius: BorderRadius.circular(999),
-            border: Border.all(color: Colors.black.withOpacity(0.04)),
+            border: Border.all(color: Colors.black.withValues(alpha: 0.04)),
           ),
           child: Stack(
             children: [
@@ -97,7 +97,7 @@ class _SwipeToSaveState extends State<SwipeToSave> {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.goldPrimary.withOpacity(0.3),
+                          color: AppColors.goldPrimary.withValues(alpha: 0.3),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -118,7 +118,7 @@ class _SwipeToSaveState extends State<SwipeToSave> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.black.withOpacity(0.03)),
+                    border: Border.all(color: Colors.black.withValues(alpha: 0.03)),
                   ),
                   child: Icon(
                     _isCompleted ? Icons.check : Icons.lock_outline,

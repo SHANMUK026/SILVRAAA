@@ -48,7 +48,7 @@ class _MainWrapperState extends State<MainWrapper> {
         height: 85,
         decoration: BoxDecoration(
           color: const Color(0xFF0B0B0F),
-          border: Border(top: BorderSide(color: Colors.white.withOpacity(0.05), width: 0.5)),
+          border: Border(top: BorderSide(color: Colors.white.withValues(alpha: 0.05), width: 0.5)),
         ),
         child: Stack(
           alignment: Alignment.center,
@@ -103,7 +103,7 @@ class _MainWrapperState extends State<MainWrapper> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFECB613).withOpacity(0.4),
+                        color: const Color(0xFFECB613).withValues(alpha: 0.4),
                         blurRadius: 15,
                         offset: const Offset(0, 5),
                       ),

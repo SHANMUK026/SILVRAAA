@@ -83,7 +83,7 @@ router.post('/register', [
     });
   } catch (err) {
     if (err.code === '23505') {
-      return res.status(400).json({ error: 'Email already registered' });
+      return res.status(400).json({ error: 'Email or Phone already registered' });
     }
     console.error(err);
     res.status(500).json({ error: 'Registration failed' });
@@ -107,7 +107,14 @@ router.post('/login', [
       const result = await pool.query('SELECT id, email, phone, password_hash, full_name, username FROM users WHERE email = $1', [email]);
       user = result.rows[0];
     } else {
-      const result = await pool.query('SELECT id, email, phone, password_hash, full_name, username FROM users WHERE phone = $1', [phone]);
+      // Normalize phone number (remove non-digits, e.g. +91 86868 59588 -> 8686859588)
+      // If it starts with 91 and is 12 digits, take last 10
+      let cleanPhone = phone.replace(/\D/g, '');
+      if (cleanPhone.length > 10 && cleanPhone.startsWith('91')) {
+        cleanPhone = cleanPhone.slice(-10);
+      }
+      
+      const result = await pool.query('SELECT id, email, phone, password_hash, full_name, username FROM users WHERE phone = $1', [cleanPhone]);
       user = result.rows[0];
     }
 

@@ -140,9 +140,9 @@ class _WalletScreenState extends State<WalletScreen> {
       width: double.infinity,
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.white.withOpacity(0.05), Colors.white.withOpacity(0.02)]),
+        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.white.withValues(alpha: 0.05), Colors.white.withValues(alpha: 0.02)]),
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         children: [
@@ -197,7 +197,7 @@ class _WalletScreenState extends State<WalletScreen> {
         const SizedBox(height: 16),
         Container(
           padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withOpacity(0.05))),
+          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
           child: Column(
             children: [
               Row(
@@ -241,7 +241,7 @@ class _WalletScreenState extends State<WalletScreen> {
       onTap: () => setState(() => _amountController.text = a.toString()),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.white10)),
+        decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.white10)),
         child: Text('+₹$a', style: const TextStyle(color: Colors.white70, fontSize: 10, fontWeight: FontWeight.w900)),
       ),
     );
@@ -270,7 +270,7 @@ class _WalletScreenState extends State<WalletScreen> {
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 24),
-          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withOpacity(0.05))),
+          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
           child: Column(
             children: [
               Icon(icon, color: _goldPrimary, size: 28),
@@ -305,12 +305,12 @@ class _WalletScreenState extends State<WalletScreen> {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.02), borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.white.withOpacity(0.03))),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.02), borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.white.withValues(alpha: 0.03))),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(color: (isDebit ? AppColors.success : Colors.red).withOpacity(0.1), borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(color: (isDebit ? AppColors.success : Colors.red).withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
             child: Icon(isDebit ? Icons.add_rounded : Icons.remove_rounded, color: isDebit ? AppColors.success : Colors.red, size: 20),
           ),
           const SizedBox(width: 16),

@@ -169,7 +169,7 @@ class _HistoryScreenState extends State<HistoryScreen> with SingleTickerProvider
   Widget _buildSearchBar() {
     return Container(
       height: 54,
-      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(18), border: Border.all(color: Colors.white.withOpacity(0.05))),
+      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(18), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
       child: TextField(
         controller: _searchController,
         style: const TextStyle(color: Colors.white, fontSize: 14),
@@ -216,13 +216,13 @@ class _HistoryScreenState extends State<HistoryScreen> with SingleTickerProvider
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.02)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.02)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(color: Colors.white.withOpacity(0.03), shape: BoxShape.circle),
+            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.03), shape: BoxShape.circle),
             child: Icon(t['icon'], color: _goldPrimary, size: 20),
           ),
           const SizedBox(width: 16),
@@ -241,7 +241,7 @@ class _HistoryScreenState extends State<HistoryScreen> with SingleTickerProvider
             children: [
               Text(t['amount'], style: TextStyle(color: t['isPositive'] ? Colors.green : Colors.white, fontWeight: FontWeight.w900, fontSize: 15)),
               const SizedBox(height: 4),
-              Text(t['status'], style: TextStyle(color: t['isPositive'] ? Colors.green.withOpacity(0.7) : Colors.white24, fontSize: 10, fontWeight: FontWeight.bold)),
+              Text(t['status'], style: TextStyle(color: t['isPositive'] ? Colors.green.withValues(alpha: 0.7) : Colors.white24, fontSize: 10, fontWeight: FontWeight.bold)),
             ],
           ),
         ],
@@ -255,7 +255,7 @@ class _HistoryScreenState extends State<HistoryScreen> with SingleTickerProvider
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.history_rounded, size: 64, color: Colors.white.withOpacity(0.05)),
+            Icon(Icons.history_rounded, size: 64, color: Colors.white.withValues(alpha: 0.05)),
             const SizedBox(height: 16),
             const Text('No transactions found', style: TextStyle(color: Colors.white24, fontSize: 14)),
           ],

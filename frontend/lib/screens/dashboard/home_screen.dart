@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/colors.dart';
 import '../../services/api_service.dart';
 import '../../widgets/common/swipe_to_save.dart';
+import '../../widgets/dashboard/profile_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Timer? _priceTimer;
   Timer? _scrollTimer;
   bool _showGoldInPill = true;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final Color _bgColor = const Color(0xFF0D0D12);
   final Color _cardBgColor = const Color(0xFF16161E);
@@ -149,9 +151,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.05),
+          color: Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: _goldPrimary.withOpacity(0.2)),
+          border: Border.all(color: _goldPrimary.withValues(alpha: 0.2)),
         ),
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 500),
@@ -204,9 +206,9 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 20, offset: const Offset(0, 10)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 20, offset: const Offset(0, 10)),
         ],
       ),
       child: Column(
@@ -248,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildSmallToggle() {
     return Container(
       padding: const EdgeInsets.all(2),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(10)),
       child: Row(
         children: [
           _miniToggleItem('Gold', isGoldSelected),
@@ -286,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         height: 54,
         decoration: BoxDecoration(
-          color: primary ? _goldPrimary : Colors.white.withOpacity(0.05),
+          color: primary ? _goldPrimary : Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
@@ -323,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: _cardBgColor, shape: BoxShape.circle, border: Border.all(color: Colors.white.withOpacity(0.05))),
+            decoration: BoxDecoration(color: _cardBgColor, shape: BoxShape.circle, border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
             child: Icon(icon, color: _goldPrimary, size: 24),
           ),
           const SizedBox(height: 8),
@@ -363,7 +365,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: active ? _goldPrimary : Colors.white.withOpacity(0.05),
+          color: active ? _goldPrimary : Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text('₹${amt.toInt()}', style: TextStyle(color: active ? Colors.black : Colors.white60, fontSize: 12, fontWeight: FontWeight.bold)),
@@ -389,10 +391,10 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withOpacity(0.03))),
+        decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withValues(alpha: 0.03))),
         child: Row(
           children: [
-            Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: color.withOpacity(0.1), shape: BoxShape.circle), child: Icon(icon, color: color, size: 20)),
+            Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: color.withValues(alpha: 0.1), shape: BoxShape.circle), child: Icon(icon, color: color, size: 20)),
             const SizedBox(width: 16),
             Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)), Text(sub, style: const TextStyle(color: Colors.white38, fontSize: 11))])),
             const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white12, size: 14),
@@ -427,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
       width: 260,
       margin: const EdgeInsets.only(right: 16),
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(gradient: LinearGradient(colors: [_cardBgColor, _bgColor]), borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withOpacity(0.05))),
+      decoration: BoxDecoration(gradient: LinearGradient(colors: [_cardBgColor, _bgColor]), borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

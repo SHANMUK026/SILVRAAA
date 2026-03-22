@@ -201,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'Forgot Password?',
                         style: TextStyle(
-                          color: const Color(0xFFD4AF37).withOpacity(0.8),
+                          color: const Color(0xFFD4AF37).withValues(alpha: 0.8),
                           fontSize: 14,
                         ),
                       ),

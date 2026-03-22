@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: cardBgColor,
                 borderRadius: BorderRadius.circular(28),
-                border: Border.all(color: Colors.white.withOpacity(0.05)),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
               ),
               child: Row(
                 children: [
@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [goldPrimary, const Color(0xFFFFD700)]),
                       shape: BoxShape.circle,
-                      boxShadow: [BoxShadow(color: goldPrimary.withOpacity(0.3), blurRadius: 15)],
+                      boxShadow: [BoxShadow(color: goldPrimary.withValues(alpha: 0.3), blurRadius: 15)],
                     ),
                     child: const Center(child: Icon(Icons.person, color: Colors.black, size: 35)),
                   ),
@@ -55,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                         const SizedBox(height: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          decoration: BoxDecoration(color: AppColors.success.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+                          decoration: BoxDecoration(color: AppColors.success.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
                           child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -122,7 +122,7 @@ class ProfileScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(children: items),
     );
@@ -144,7 +144,7 @@ class _ProfileMenuItem extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       leading: Container(
         padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(color: Colors.white.withOpacity(0.03), shape: BoxShape.circle),
+        decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.03), shape: BoxShape.circle),
         child: Icon(icon, color: const Color(0xFFECB613), size: 18),
       ),
       title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),

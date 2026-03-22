@@ -154,7 +154,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
       decoration: BoxDecoration(
         gradient: const LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF231F14), Color(0xFF0D0D12)]),
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: _goldPrimary.withOpacity(0.2)),
+        border: Border.all(color: _goldPrimary.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -178,7 +178,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
   Widget _buildTabToggle() {
     return Container(
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(16)),
       child: TabBar(
         controller: _tabController,
         dividerColor: Colors.transparent,
@@ -218,7 +218,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
         onTap: () => setState(() => _selectedAsset = val),
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 20),
-          decoration: BoxDecoration(color: active ? _goldPrimary.withOpacity(0.1) : _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: active ? _goldPrimary : Colors.white.withOpacity(0.05))),
+          decoration: BoxDecoration(color: active ? _goldPrimary.withValues(alpha: 0.1) : _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: active ? _goldPrimary : Colors.white.withValues(alpha: 0.05))),
           child: Column(
             children: [
               Icon(icon, color: active ? _goldPrimary : Colors.white38, size: 28),
@@ -272,7 +272,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
       child: Container(
         width: MediaQuery.of(context).size.width * 0.28,
         padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(color: active ? _goldPrimary : _cardBgColor, borderRadius: BorderRadius.circular(20), border: Border.all(color: active ? _goldPrimary : Colors.white.withOpacity(0.05))),
+        decoration: BoxDecoration(color: active ? _goldPrimary : _cardBgColor, borderRadius: BorderRadius.circular(20), border: Border.all(color: active ? _goldPrimary : Colors.white.withValues(alpha: 0.05))),
         child: Center(child: Text(f, style: TextStyle(color: active ? Colors.black : Colors.white, fontWeight: FontWeight.w900, fontSize: 12))),
       ),
     );
@@ -309,7 +309,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
   Widget _buildForecastCard() {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.02), borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withOpacity(0.05))),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.02), borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -335,7 +335,7 @@ class _SavingPlansScreenState extends State<SavingPlansScreen> with SingleTicker
           height: 64,
           child: ElevatedButton(
             onPressed: _handleActivate,
-            style: ElevatedButton.styleFrom(backgroundColor: _goldPrimary, foregroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), elevation: 12, shadowColor: _goldPrimary.withOpacity(0.3)),
+            style: ElevatedButton.styleFrom(backgroundColor: _goldPrimary, foregroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), elevation: 12, shadowColor: _goldPrimary.withValues(alpha: 0.3)),
             child: Text(_tabController.index == 0 ? 'ACTIVATE SIP' : 'ACTIVATE AUTOBOT', style: const TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.5)),
           ),
         );

@@ -88,7 +88,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [gold, const Color(0xFFFFD700)]),
               shape: BoxShape.circle,
-              boxShadow: [BoxShadow(color: gold.withOpacity(0.3), blurRadius: 10)],
+              boxShadow: [BoxShadow(color: gold.withValues(alpha: 0.3), blurRadius: 10)],
             ),
             child: const Center(child: Icon(Icons.person_rounded, color: Colors.black, size: 28)),
           ),

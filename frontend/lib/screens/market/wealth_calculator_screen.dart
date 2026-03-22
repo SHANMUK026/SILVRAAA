@@ -111,7 +111,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
     return Container(
       width: 220,
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(16)),
       child: Row(
         children: [
           _toggleBtn('Gold', isGold),
@@ -148,7 +148,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
         const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-          decoration: BoxDecoration(color: const Color(0xFF10B981).withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: const Color(0xFF10B981).withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20)),
           child: Text(
             'YOU EARN ₹${profit.toStringAsFixed(0)} EXTRA',
             style: const TextStyle(color: Color(0xFF10B981), fontSize: 10, fontWeight: FontWeight.w900),
@@ -165,7 +165,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _statCol('TOTAL INVESTED', '₹${invested.toStringAsFixed(0)}'),
-          Container(height: 32, width: 1, color: Colors.white.withOpacity(0.05), margin: const EdgeInsets.symmetric(horizontal: 40)),
+          Container(height: 32, width: 1, color: Colors.white.withValues(alpha: 0.05), margin: const EdgeInsets.symmetric(horizontal: 40)),
           _statCol('MATURITY VALUE', '₹${maturity.toStringAsFixed(0)}'),
         ],
       ),
@@ -189,7 +189,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,7 +225,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(28),
-      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(32), border: Border.all(color: Colors.white.withOpacity(0.03))),
+      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(32), border: Border.all(color: Colors.white.withValues(alpha: 0.03))),
       child: Column(
         children: [
           Row(
@@ -244,9 +244,9 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
           SliderTheme(
             data: SliderTheme.of(context).copyWith(
               activeTrackColor: _goldPrimary,
-              inactiveTrackColor: Colors.white.withOpacity(0.05),
+              inactiveTrackColor: Colors.white.withValues(alpha: 0.05),
               thumbColor: Colors.white,
-              overlayColor: _goldPrimary.withOpacity(0.1),
+              overlayColor: _goldPrimary.withValues(alpha: 0.1),
               trackHeight: 4,
             ),
             child: Slider(
@@ -264,7 +264,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
   Widget _tenureToggle() {
     return Container(
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(12)),
       child: Row(
         children: [
           _tItem('Mo', isMonthlyTenure),
@@ -293,7 +293,7 @@ class _WealthCalculatorScreenState extends State<WealthCalculatorScreen> {
       children: [
         _btn('Start Investing', _goldPrimary, Colors.black, () => context.push('/buy', extra: {'isGold': isGold})),
         const SizedBox(height: 16),
-        _btn('View Saving Plans', Colors.white.withOpacity(0.05), Colors.white, () => context.push('/savings')),
+        _btn('View Saving Plans', Colors.white.withValues(alpha: 0.05), Colors.white, () => context.push('/savings')),
       ],
     );
   }

@@ -180,10 +180,10 @@ class _KycScreenState extends State<KycScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: const Color(0xFFD4AF37).withOpacity(0.5)),
+                    border: Border.all(color: const Color(0xFFD4AF37).withValues(alpha: 0.5)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -194,7 +194,7 @@ class _KycScreenState extends State<KycScreen> {
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFD4AF37).withOpacity(0.1),
+                          color: const Color(0xFFD4AF37).withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(Icons.flash_on, color: Color(0xFFD4AF37), size: 24),
@@ -223,12 +223,12 @@ class _KycScreenState extends State<KycScreen> {
 
               Row(
                 children: [
-                  Expanded(child: Divider(color: Colors.grey.withOpacity(0.3))),
+                  Expanded(child: Divider(color: Colors.grey.withValues(alpha: 0.3))),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text('OR USE MANUAL FORM', style: TextStyle(fontSize: 10, color: Colors.grey, fontWeight: FontWeight.bold)),
                   ),
-                  Expanded(child: Divider(color: Colors.grey.withOpacity(0.3))),
+                  Expanded(child: Divider(color: Colors.grey.withValues(alpha: 0.3))),
                 ],
               ),
               const SizedBox(height: 32),
@@ -256,9 +256,9 @@ class _KycScreenState extends State<KycScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFFD709).withOpacity(0.1),
+                  color: const Color(0xFFFFD709).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: const Color(0xFFFFD709).withOpacity(0.3)),
+                  border: Border.all(color: const Color(0xFFFFD709).withValues(alpha: 0.3)),
                 ),
                 child: const Row(
                   children: [
@@ -293,7 +293,7 @@ class _KycScreenState extends State<KycScreen> {
                           borderRadius: BorderRadius.circular(28),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFD4AF37).withOpacity(0.3),
+                              color: const Color(0xFFD4AF37).withValues(alpha: 0.3),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             )

@@ -206,7 +206,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                         ),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
-                          BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 4, offset: const Offset(0, 2))
+                          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 4, offset: const Offset(0, 2))
                         ],
                       )
                     : null,
@@ -238,7 +238,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                         ),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
-                          BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 4, offset: const Offset(0, 2))
+                          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 4, offset: const Offset(0, 2))
                         ],
                       )
                     : null,
@@ -269,7 +269,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(color: const Color(0xFFD0C5AF)),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 24)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 24)],
       ),
       child: Column(
         children: [
@@ -319,7 +319,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(color: const Color(0xFFD0C5AF)),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10)],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -421,7 +421,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
   Widget _buildBankCard() {
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: const Color(0xFFD0C5AF)), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 4)]),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: const Color(0xFFD0C5AF)), boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 4)]),
       child: Row(
         children: [
           Container(width: 48, height: 48, decoration: BoxDecoration(color: const Color(0xFFE2E2E2), borderRadius: BorderRadius.circular(16)), child: const Icon(Icons.account_balance, color: Color(0xFF735C00))),
@@ -450,7 +450,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
           child: Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 20),
-            decoration: BoxDecoration(gradient: const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFFECC813), Color(0xFFF7E37B)]), borderRadius: BorderRadius.circular(24), boxShadow: [BoxShadow(color: const Color(0xFFECC813).withOpacity(0.3), blurRadius: 15, offset: const Offset(0, 10))]),
+            decoration: BoxDecoration(gradient: const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFFECC813), Color(0xFFF7E37B)]), borderRadius: BorderRadius.circular(24), boxShadow: [BoxShadow(color: const Color(0xFFECC813).withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 10))]),
             child: Center(child: isSubmitting? const SizedBox(height: 24, width: 24, child: CircularProgressIndicator(color: Color(0xFF241A00), strokeWidth: 2)) : const Text('Withdraw Now', style: TextStyle(color: Color(0xFF241A00), fontSize: 18, fontWeight: FontWeight.bold))),
           ),
         ),
@@ -462,7 +462,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
   Widget _buildBottomNav() {
     return Container(
       height: 70,
-      decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Colors.black.withOpacity(0.05)))),
+      decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Colors.black.withValues(alpha: 0.05)))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

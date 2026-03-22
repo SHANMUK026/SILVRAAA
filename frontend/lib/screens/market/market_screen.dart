@@ -126,7 +126,7 @@ class _MarketScreenState extends State<MarketScreen> {
     return Container(
       width: 220,
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(16)),
       child: Row(
         children: [
           _toggleItem('Gold', isGoldSelected),
@@ -210,7 +210,7 @@ class _MarketScreenState extends State<MarketScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-          color: active ? _goldPrimary : Colors.white.withOpacity(0.05),
+          color: active ? _goldPrimary : Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text(
@@ -227,13 +227,13 @@ class _MarketScreenState extends State<MarketScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(color: _goldPrimary.withOpacity(0.1), shape: BoxShape.circle),
+            decoration: BoxDecoration(color: _goldPrimary.withValues(alpha: 0.1), shape: BoxShape.circle),
             child: Icon(Icons.notifications_active_rounded, color: _goldPrimary, size: 24),
           ),
           const SizedBox(width: 16),
@@ -281,7 +281,7 @@ class _MarketScreenState extends State<MarketScreen> {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: primary ? _goldPrimary : Colors.white.withOpacity(0.05),
+          color: primary ? _goldPrimary : Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(20),
         ),
         alignment: Alignment.center,
@@ -310,7 +310,7 @@ class GlowChartPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final shadowPaint = Paint()
-      ..color = color.withOpacity(0.2)
+      ..color = color.withValues(alpha: 0.2)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
 
     final path = Path();
@@ -341,7 +341,7 @@ class GlowChartPainter extends CustomPainter {
       ..shader = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [color.withOpacity(0.15), Colors.transparent],
+        colors: [color.withValues(alpha: 0.15), Colors.transparent],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
     canvas.drawPath(areaPath, areaPaint);

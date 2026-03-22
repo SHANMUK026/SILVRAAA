@@ -71,7 +71,7 @@ class _BuyScreenState extends State<BuyScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         children: [
@@ -90,7 +90,7 @@ class _BuyScreenState extends State<BuyScreen> {
             children: [
               Text(
                 'Earnings: ',
-                style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 12),
+                style: TextStyle(color: Colors.white.withValues(alpha: 0.2), fontSize: 12),
               ),
               Text(
                 isSIPMode ? '₹80,617 🎉' : '₹20,455 🎉',
@@ -118,7 +118,7 @@ class _BuyScreenState extends State<BuyScreen> {
   Widget _buildModeToggle() {
     return Container(
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: [
           _modeBtn('Setup SIP', isSIPMode),
@@ -186,7 +186,7 @@ class _BuyScreenState extends State<BuyScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: _goldPrimary.withOpacity(0.2)),
+        border: Border.all(color: _goldPrimary.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
@@ -213,9 +213,9 @@ class _BuyScreenState extends State<BuyScreen> {
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
             activeTrackColor: _goldPrimary,
-            inactiveTrackColor: Colors.white.withOpacity(0.05),
+            inactiveTrackColor: Colors.white.withValues(alpha: 0.05),
             thumbColor: Colors.white,
-            overlayColor: _goldPrimary.withOpacity(0.1),
+            overlayColor: _goldPrimary.withValues(alpha: 0.1),
             trackHeight: 4,
           ),
           child: Slider(
@@ -236,8 +236,8 @@ class _BuyScreenState extends State<BuyScreen> {
         width: 100,
         padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
-          color: active ? _goldPrimary.withOpacity(0.1) : Colors.transparent,
-          border: Border.all(color: active ? _goldPrimary : Colors.white.withOpacity(0.1)),
+          color: active ? _goldPrimary.withValues(alpha: 0.1) : Colors.transparent,
+          border: Border.all(color: active ? _goldPrimary : Colors.white.withValues(alpha: 0.1)),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
@@ -253,7 +253,7 @@ class _BuyScreenState extends State<BuyScreen> {
   Widget _buildStepUpCard() {
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.03), borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.03), borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: [
           Checkbox(
@@ -281,7 +281,7 @@ class _BuyScreenState extends State<BuyScreen> {
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
       decoration: BoxDecoration(
         color: _bgColor,
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 40, offset: const Offset(0, -10))],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 40, offset: const Offset(0, -10))],
       ),
       child: ElevatedButton(
         onPressed: () {},

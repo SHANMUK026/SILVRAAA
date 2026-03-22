@@ -194,7 +194,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   Widget _buildMetalSelector() {
     return Container(
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: [
           _selectorItem(true, '24K Gold'),
@@ -225,7 +225,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withOpacity(0.03)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.03)),
         image: DecorationImage(
           image: NetworkImage(_isGold 
             ? 'https://img.freepik.com/premium-photo/gold-coin-isolated-black-background_825501-155.jpg'
@@ -273,7 +273,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         width: 70,
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: selected ? _goldPrimary.withOpacity(0.1) : _cardBgColor,
+          color: selected ? _goldPrimary.withValues(alpha: 0.1) : _cardBgColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: selected ? _goldPrimary : Colors.white10),
         ),
@@ -291,7 +291,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         const SizedBox(height: 16),
         Container(
           padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withOpacity(0.05))),
+          decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(28), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
           child: addr == null ? _emptyAddress() : Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -329,7 +329,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   Widget _buildPricingSummary(double making, double fee, double total) {
     return Container(
       padding: const EdgeInsets.all(28),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.02), borderRadius: BorderRadius.circular(32), border: Border.all(color: Colors.white10)),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.02), borderRadius: BorderRadius.circular(32), border: Border.all(color: Colors.white10)),
       child: Column(
         children: [
           _priceRow('MAKING CHARGES', '₹${making.toStringAsFixed(0)}'),
@@ -378,7 +378,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 height: 60,
                 child: ElevatedButton(
                   onPressed: _handlePlaceOrder,
-                  style: ElevatedButton.styleFrom(backgroundColor: _goldPrimary, foregroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), elevation: 12, shadowColor: _goldPrimary.withOpacity(0.3)),
+                  style: ElevatedButton.styleFrom(backgroundColor: _goldPrimary, foregroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), elevation: 12, shadowColor: _goldPrimary.withValues(alpha: 0.3)),
                   child: const Text('CONFIRM DELIVERY', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900, letterSpacing: 1)),
                 ),
               ),

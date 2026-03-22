@@ -69,7 +69,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
   void _showPrizeModal(String prize) {
     showDialog(
       context: context,
-      barrierColor: Colors.black.withOpacity(0.9),
+      barrierColor: Colors.black.withValues(alpha: 0.9),
       builder: (context) => Dialog(
         backgroundColor: Colors.transparent,
         child: Container(
@@ -77,8 +77,8 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
           decoration: BoxDecoration(
             color: _cardBgColor,
             borderRadius: BorderRadius.circular(32),
-            border: Border.all(color: _goldPrimary.withOpacity(0.3)),
-            boxShadow: [BoxShadow(color: _goldPrimary.withOpacity(0.2), blurRadius: 40)],
+            border: Border.all(color: _goldPrimary.withValues(alpha: 0.3)),
+            boxShadow: [BoxShadow(color: _goldPrimary.withValues(alpha: 0.2), blurRadius: 40)],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -108,7 +108,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
     return Container(
       width: 100,
       height: 100,
-      decoration: BoxDecoration(color: _goldPrimary, shape: BoxShape.circle, boxShadow: [BoxShadow(color: _goldPrimary.withOpacity(0.5), blurRadius: 20)]),
+      decoration: BoxDecoration(color: _goldPrimary, shape: BoxShape.circle, boxShadow: [BoxShadow(color: _goldPrimary.withValues(alpha: 0.5), blurRadius: 20)]),
       child: const Icon(Icons.emoji_events_rounded, color: Colors.black, size: 50),
     );
   }
@@ -163,8 +163,8 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
       decoration: BoxDecoration(
         color: _cardBgColor,
         borderRadius: BorderRadius.circular(36),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 30, offset: const Offset(0, 10))],
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 30, offset: const Offset(0, 10))],
       ),
       child: Column(
         children: [
@@ -189,7 +189,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
           const SizedBox(height: 32),
           LinearProgressIndicator(
             value: 0.7,
-            backgroundColor: Colors.white.withOpacity(0.05),
+            backgroundColor: Colors.white.withValues(alpha: 0.05),
             color: _goldPrimary,
             minHeight: 8,
             borderRadius: BorderRadius.circular(4),
@@ -242,7 +242,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
             decoration: BoxDecoration(
               color: _goldPrimary,
               borderRadius: BorderRadius.circular(32),
-              boxShadow: [BoxShadow(color: _goldPrimary.withOpacity(0.4), blurRadius: 24, offset: const Offset(0, 8))],
+              boxShadow: [BoxShadow(color: _goldPrimary.withValues(alpha: 0.4), blurRadius: 24, offset: const Offset(0, 8))],
             ),
             child: const Text('SPIN NOW (FREE)', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 1)),
           ),
@@ -257,7 +257,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
       height: 340,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        boxShadow: [BoxShadow(color: _goldPrimary.withOpacity(0.08), blurRadius: 80, spreadRadius: 20)],
+        boxShadow: [BoxShadow(color: _goldPrimary.withValues(alpha: 0.08), blurRadius: 80, spreadRadius: 20)],
       ),
     );
   }
@@ -296,7 +296,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
   Widget _rewardCard(String title, String cost, String img) {
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withOpacity(0.05))),
+      decoration: BoxDecoration(color: _cardBgColor, borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.white.withValues(alpha: 0.05))),
       child: Row(
         children: [
           Container(
@@ -317,7 +317,7 @@ class _RewardsScreenState extends State<RewardsScreen> with SingleTickerProvider
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(color: Colors.white.withOpacity(0.05), borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(12)),
             child: const Text('Redeem', style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
           ),
         ],
@@ -335,7 +335,7 @@ class LuxuryWheelPainter extends CustomPainter {
     final double radius = size.width / 2;
     final Offset center = Offset(radius, radius);
     final paint = Paint()..style = PaintingStyle.fill;
-    final borderPaint = Paint()..style = PaintingStyle.stroke..strokeWidth = 2..color = primary.withOpacity(0.3);
+    final borderPaint = Paint()..style = PaintingStyle.stroke..strokeWidth = 2..color = primary.withValues(alpha: 0.3);
 
     const int segments = 8;
     const double sweepAngle = 2 * math.pi / segments;
@@ -348,13 +348,13 @@ class LuxuryWheelPainter extends CustomPainter {
       canvas.drawArc(Rect.fromCircle(center: center, radius: radius), i * sweepAngle, sweepAngle, true, borderPaint);
 
       // Add small circles at the perimeter
-      final orbitPaint = Paint()..color = primary.withOpacity(0.5)..style = PaintingStyle.fill;
+      final orbitPaint = Paint()..color = primary.withValues(alpha: 0.5)..style = PaintingStyle.fill;
       canvas.drawCircle(Offset(center.dx + radius * math.cos(i * sweepAngle), center.dy + radius * math.sin(i * sweepAngle)), 3, orbitPaint);
     }
 
     // Outer ring
     canvas.drawCircle(center, radius, borderPaint..strokeWidth = 8..color = primary);
-    canvas.drawCircle(center, radius - 4, borderPaint..strokeWidth = 1..color = Colors.black.withOpacity(0.5));
+    canvas.drawCircle(center, radius - 4, borderPaint..strokeWidth = 1..color = Colors.black.withValues(alpha: 0.5));
   }
 
   @override

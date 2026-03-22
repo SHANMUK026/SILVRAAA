@@ -6,7 +6,6 @@ import 'utils/app_routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  ApiService.printBaseUrl();
   runApp(
     MultiProvider(
       providers: [

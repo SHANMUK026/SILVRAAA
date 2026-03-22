@@ -4,21 +4,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiService {
   static final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: 'http://10.53.24.253:3001/api', // Local IP for physical mobile testing
+      baseUrl: 'http://localhost:3001/api', // ADB Reverse for physical device testing
       connectTimeout: const Duration(seconds: 15),
       receiveTimeout: const Duration(seconds: 15),
     ),
   )..interceptors.add(LogInterceptor(
       requestBody: true,
       responseBody: true,
-      logPrint: (obj) {
-        print('--- DIO LOG: $obj');
-      },
     ));
 
-  static void printBaseUrl() {
-    print('--- CURRENT BASE URL: ${_dio.options.baseUrl}');
-  }
 
   // Helper to add Auth token to headers
   static Future<void> _addAuthHeader() async {
@@ -80,7 +74,8 @@ class ApiService {
   // Login (Handles specific errors like "User doesn't exist")
   static Future<Map<String, dynamic>> login(String identifier, String password) async {
     try {
-      final data = identifier.contains('@') ? {'email': identifier, 'password': password} : {'phone': identifier, 'password': password};
+      final trimmedIdentifier = identifier.trim();
+      final data = trimmedIdentifier.contains('@') ? {'email': trimmedIdentifier, 'password': password} : {'phone': trimmedIdentifier, 'password': password};
       final response = await _dio.post('/auth/login', data: data);
       
       if (response.data['token'] != null) {

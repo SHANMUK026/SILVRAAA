@@ -209,7 +209,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 20, offset: const Offset(0, 10)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 20, offset: const Offset(0, 10)),
         ],
       ),
       child: Row(
@@ -293,7 +293,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
       alignment: Alignment.center,
       child: Column(
         children: [
-          Icon(Icons.history_rounded, color: Colors.grey.withOpacity(0.3), size: 48),
+          Icon(Icons.history_rounded, color: Colors.grey.withValues(alpha: 0.3), size: 48),
           const SizedBox(height: 16),
           const Text('Your journey begins soon!', style: TextStyle(color: Color(0xFF94A3B8), fontWeight: FontWeight.w600)),
         ],

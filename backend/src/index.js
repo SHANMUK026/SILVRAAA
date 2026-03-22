@@ -51,10 +51,12 @@ app.get('/health', (req, res) => {
 app.get('/api/health', async (req, res) => {
   try {
     const dbTest = await pool.query('SELECT current_database(), now()');
+    const userCount = await pool.query('SELECT COUNT(*) FROM users');
     res.json({ 
       status: 'ok', 
       database: 'connected',
       dbName: dbTest.rows[0].current_database,
+      totalUsers: parseInt(userCount.rows[0].count),
       timestamp: new Date(), 
       uptime: process.uptime() 
     });

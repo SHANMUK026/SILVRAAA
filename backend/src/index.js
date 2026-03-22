@@ -18,6 +18,9 @@ const walletRoutes = require('./routes/wallet');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Trust Railway proxy (essential for rate-limiting)
+app.set('trust proxy', 1);
+
 app.use(cors({ origin: true, credentials: true }));
 
 // Global error capture for remote debugging
